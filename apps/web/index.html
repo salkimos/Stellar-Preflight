@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>stellar-preflight</title>
+  <meta name="description" content="Check whether a Stellar payment can succeed before you send it.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' rx='3' fill='%23111'/><path d='M4 8.5l2.5 2.5L12 5.5' stroke='%23fff' stroke-width='2' fill='none'/></svg>">
+  <link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>stellar-preflight</h1>
+      <p>Check whether a Stellar payment can succeed before you send it. Read-only: nothing is signed or submitted.</p>
+    </header>
+
+    <form id="form" autocomplete="off" spellcheck="false">
+      <div class="row">
+        <label for="example">example</label>
+        <select id="example"><option value="">custom</option></select>
+      </div>
+      <div class="row">
+        <label for="network">network</label>
+        <select id="network" name="network">
+          <option value="testnet">testnet</option>
+          <option value="mainnet">mainnet</option>
+        </select>
+      </div>
+      <div class="row">
+        <label for="recipient">recipient</label>
+        <input id="recipient" name="recipient" placeholder="G..., M... or C..." required>
+      </div>
+      <div class="row">
+        <label for="asset">asset</label>
+        <input id="asset" name="asset" placeholder="XLM, CODE:ISSUER or C..." required>
+      </div>
+      <div class="row">
+        <label for="amount">amount</label>
+        <input id="amount" name="amount" placeholder="10" inputmode="decimal" required>
+      </div>
+      <div class="row">
+        <label for="from">sender <span class="muted">optional</span></label>
+        <input id="from" name="from" placeholder="G... or C...  enables transfer simulation">
+      </div>
+      <div class="row" id="rpc-row" hidden>
+        <label for="rpc">rpc url</label>
+        <input id="rpc" name="rpc" placeholder="https://your-mainnet-rpc">
+      </div>
+      <div class="actions">
+        <button type="submit" id="run">Run check</button>
+        <span id="busy" class="muted" hidden>checking…</span>
+      </div>
+    </form>
+
+    <section id="result" hidden></section>
+
+    <footer class="muted">
+      Checks recipient address type, account state, trustlines, authorization, capacity, SAC and SEP-41 tokens.
+    </footer>
+  </main>
+  <script type="module" src="./src/main.ts"></script>
+</body>
+</html>
