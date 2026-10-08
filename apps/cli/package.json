@@ -1,0 +1,15 @@
+{
+  "name": "@stellar-preflight/cli",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.ts"
+  },
+  "bin": {
+    "stellar-preflight": "./src/cli.ts"
+  },
+  "dependencies": {
+    "@stellar-preflight/sdk": "workspace:*"
+  }
+}
