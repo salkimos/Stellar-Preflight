@@ -1,0 +1,30 @@
+{
+  "name": "Memo required (SEP-29)",
+  "input": {
+    "network": "testnet",
+    "recipient": "GDOGVVE6RZZP3Z3PB7PHIK52MVYRU3NFRNCSYKCNRJQGH6K2D5ATQQQL",
+    "asset": "XLM",
+    "amount": "10"
+  },
+  "result": {
+    "status": "WARNING",
+    "route": "payment",
+    "recipient": {
+      "kind": "account",
+      "address": "GDOGVVE6RZZP3Z3PB7PHIK52MVYRU3NFRNCSYKCNRJQGH6K2D5ATQQQL"
+    },
+    "asset": {
+      "kind": "native",
+      "label": "XLM",
+      "decimals": 7
+    },
+    "issues": [
+      {
+        "code": "MEMO_REQUIRED",
+        "severity": "warning",
+        "message": "Recipient requires a memo on incoming payments (SEP-29).",
+        "action": "Add the memo the recipient gave you, usually an exchange deposit id."
+      }
+    ]
+  }
+}

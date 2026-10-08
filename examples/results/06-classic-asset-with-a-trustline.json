@@ -1,0 +1,23 @@
+{
+  "name": "Classic asset with a trustline",
+  "input": {
+    "network": "testnet",
+    "recipient": "GA75IHPENTDYOKFBGDCAR5OYQZVZ24XSOU57R3LI45PRMKN2YU7ASXEC",
+    "asset": "OPEN:GDS5ZLB5MLZMNS5KMCT767AO4QROXCCWUPPQWM3LGFFFU7U42H23OM2N",
+    "amount": "10"
+  },
+  "result": {
+    "status": "READY",
+    "route": "payment",
+    "recipient": {
+      "kind": "account",
+      "address": "GA75IHPENTDYOKFBGDCAR5OYQZVZ24XSOU57R3LI45PRMKN2YU7ASXEC"
+    },
+    "asset": {
+      "kind": "classic",
+      "label": "OPEN:GDS5ZLB5MLZMNS5KMCT767AO4QROXCCWUPPQWM3LGFFFU7U42H23OM2N",
+      "decimals": 7
+    },
+    "issues": []
+  }
+}

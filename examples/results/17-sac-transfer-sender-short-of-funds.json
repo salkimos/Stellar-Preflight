@@ -1,0 +1,31 @@
+{
+  "name": "SAC transfer, sender short of funds",
+  "input": {
+    "network": "testnet",
+    "recipient": "GA75IHPENTDYOKFBGDCAR5OYQZVZ24XSOU57R3LI45PRMKN2YU7ASXEC",
+    "asset": "CCWAW4IDA6RWSHN2H5DROSZAPEZZR5HXRY5FWIJRVTOWL3AJZZR4RE4V",
+    "amount": "5000",
+    "from": "GBUFXLN5FU4URQ5KXVKZNBJLEXYLAJFBKUOLIMT4OZIEX7SDW2FES3MJ"
+  },
+  "result": {
+    "status": "BLOCKED",
+    "recipient": {
+      "kind": "account",
+      "address": "GA75IHPENTDYOKFBGDCAR5OYQZVZ24XSOU57R3LI45PRMKN2YU7ASXEC"
+    },
+    "asset": {
+      "kind": "sac",
+      "label": "OPEN:GDS5ZLB5MLZMNS5KMCT767AO4QROXCCWUPPQWM3LGFFFU7U42H23OM2N",
+      "decimals": 7,
+      "contractId": "CCWAW4IDA6RWSHN2H5DROSZAPEZZR5HXRY5FWIJRVTOWL3AJZZR4RE4V"
+    },
+    "issues": [
+      {
+        "code": "TRANSFER_SIMULATION_FAILED",
+        "severity": "blocking",
+        "message": "Transfer simulation failed: resulting balance is not within the allowed range",
+        "action": "Fix the cause above. Sender-side problems (balance, auth) also show up here."
+      }
+    ]
+  }
+}

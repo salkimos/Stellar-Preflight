@@ -1,0 +1,34 @@
+{
+  "name": "Classic asset, unauthorized trustline",
+  "input": {
+    "network": "testnet",
+    "recipient": "GD3SXMOZYGGBICHVMYXEN55BZEFO3WAYET7EDCGIKEVHEN4G436UKGYW",
+    "asset": "GATED:GB3UAROVKOFNCXBYH4LN3DBA7C2J7A3YRK2GAGLREH37L7X5MA7LINAO",
+    "amount": "10"
+  },
+  "result": {
+    "status": "BLOCKED",
+    "recipient": {
+      "kind": "account",
+      "address": "GD3SXMOZYGGBICHVMYXEN55BZEFO3WAYET7EDCGIKEVHEN4G436UKGYW"
+    },
+    "asset": {
+      "kind": "classic",
+      "label": "GATED:GB3UAROVKOFNCXBYH4LN3DBA7C2J7A3YRK2GAGLREH37L7X5MA7LINAO",
+      "decimals": 7
+    },
+    "issues": [
+      {
+        "code": "ASSET_AUTH_REVOCABLE",
+        "severity": "info",
+        "message": "Issuer can revoke authorization for this asset."
+      },
+      {
+        "code": "TRUSTLINE_NOT_AUTHORIZED",
+        "severity": "blocking",
+        "message": "Recipient's GATED trustline is not authorized by the issuer.",
+        "action": "The issuer must authorize the trustline. Contact the issuer or anchor."
+      }
+    ]
+  }
+}

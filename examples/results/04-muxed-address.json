@@ -1,0 +1,31 @@
+{
+  "name": "Muxed address",
+  "input": {
+    "network": "testnet",
+    "recipient": "MA75IHPENTDYOKFBGDCAR5OYQZVZ24XSOU57R3LI45PRMKN2YU7ASAAAAAAAAAAD5FEDC",
+    "asset": "XLM",
+    "amount": "10"
+  },
+  "result": {
+    "status": "READY",
+    "route": "payment",
+    "recipient": {
+      "kind": "muxed",
+      "address": "MA75IHPENTDYOKFBGDCAR5OYQZVZ24XSOU57R3LI45PRMKN2YU7ASAAAAAAAAAAD5FEDC",
+      "base": "GA75IHPENTDYOKFBGDCAR5OYQZVZ24XSOU57R3LI45PRMKN2YU7ASXEC",
+      "id": "1001"
+    },
+    "asset": {
+      "kind": "native",
+      "label": "XLM",
+      "decimals": 7
+    },
+    "issues": [
+      {
+        "code": "MUXED_RECIPIENT",
+        "severity": "info",
+        "message": "Muxed address. Funds go to GA75IHPENTDYOKFBGDCAR5OYQZVZ24XSOU57R3LI45PRMKN2YU7ASXEC with id 1001."
+      }
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "Classic asset to an inactive account",
+  "input": {
+    "network": "testnet",
+    "recipient": "GDFVOS42AKCTV6KRPQYRMFJVH6OMAFNHOXWLYJYILQ4E6FV2HUCNID4X",
+    "asset": "OPEN:GDS5ZLB5MLZMNS5KMCT767AO4QROXCCWUPPQWM3LGFFFU7U42H23OM2N",
+    "amount": "10"
+  },
+  "result": {
+    "status": "BLOCKED",
+    "recipient": {
+      "kind": "account",
+      "address": "GDFVOS42AKCTV6KRPQYRMFJVH6OMAFNHOXWLYJYILQ4E6FV2HUCNID4X"
+    },
+    "asset": {
+      "kind": "classic",
+      "label": "OPEN:GDS5ZLB5MLZMNS5KMCT767AO4QROXCCWUPPQWM3LGFFFU7U42H23OM2N",
+      "decimals": 7
+    },
+    "issues": [
+      {
+        "code": "ACCOUNT_NOT_FOUND",
+        "severity": "blocking",
+        "message": "Recipient account GDFVOS42AKCTV6KRPQYRMFJVH6OMAFNHOXWLYJYILQ4E6FV2HUCNID4X does not exist on this network.",
+        "action": "The recipient must create and fund the account, then add a trustline, before receiving this asset."
+      }
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "Classic asset, authorized trustline",
+  "input": {
+    "network": "testnet",
+    "recipient": "GA75IHPENTDYOKFBGDCAR5OYQZVZ24XSOU57R3LI45PRMKN2YU7ASXEC",
+    "asset": "GATED:GB3UAROVKOFNCXBYH4LN3DBA7C2J7A3YRK2GAGLREH37L7X5MA7LINAO",
+    "amount": "10"
+  },
+  "result": {
+    "status": "READY",
+    "route": "payment",
+    "recipient": {
+      "kind": "account",
+      "address": "GA75IHPENTDYOKFBGDCAR5OYQZVZ24XSOU57R3LI45PRMKN2YU7ASXEC"
+    },
+    "asset": {
+      "kind": "classic",
+      "label": "GATED:GB3UAROVKOFNCXBYH4LN3DBA7C2J7A3YRK2GAGLREH37L7X5MA7LINAO",
+      "decimals": 7
+    },
+    "issues": [
+      {
+        "code": "ASSET_AUTH_REVOCABLE",
+        "severity": "info",
+        "message": "Issuer can revoke authorization for this asset."
+      }
+    ]
+  }
+}

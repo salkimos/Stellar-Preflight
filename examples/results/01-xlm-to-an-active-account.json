@@ -1,0 +1,23 @@
+{
+  "name": "XLM to an active account",
+  "input": {
+    "network": "testnet",
+    "recipient": "GA75IHPENTDYOKFBGDCAR5OYQZVZ24XSOU57R3LI45PRMKN2YU7ASXEC",
+    "asset": "XLM",
+    "amount": "10"
+  },
+  "result": {
+    "status": "READY",
+    "route": "payment",
+    "recipient": {
+      "kind": "account",
+      "address": "GA75IHPENTDYOKFBGDCAR5OYQZVZ24XSOU57R3LI45PRMKN2YU7ASXEC"
+    },
+    "asset": {
+      "kind": "native",
+      "label": "XLM",
+      "decimals": 7
+    },
+    "issues": []
+  }
+}

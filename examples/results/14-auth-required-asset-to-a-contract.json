@@ -1,0 +1,40 @@
+{
+  "name": "Auth-required asset to a contract",
+  "input": {
+    "network": "testnet",
+    "recipient": "CDWUSQDVI6T2OB5KFNZESOGVHE5VYAL37OIZ6F6Z73TLM54RW5MAA3F3",
+    "asset": "GATED:GB3UAROVKOFNCXBYH4LN3DBA7C2J7A3YRK2GAGLREH37L7X5MA7LINAO",
+    "amount": "10"
+  },
+  "result": {
+    "status": "BLOCKED",
+    "recipient": {
+      "kind": "contract",
+      "address": "CDWUSQDVI6T2OB5KFNZESOGVHE5VYAL37OIZ6F6Z73TLM54RW5MAA3F3"
+    },
+    "asset": {
+      "kind": "classic",
+      "label": "GATED:GB3UAROVKOFNCXBYH4LN3DBA7C2J7A3YRK2GAGLREH37L7X5MA7LINAO",
+      "decimals": 7,
+      "contractId": "CCXLHCYTH2MMJD6TUZV4VWPIMW5GURSGWNEVOCCWFGTSHFFNGNQICZ44"
+    },
+    "issues": [
+      {
+        "code": "ASSET_AUTH_REVOCABLE",
+        "severity": "info",
+        "message": "Issuer can revoke authorization for this asset."
+      },
+      {
+        "code": "CONTRACT_NEEDS_SAC_TRANSFER",
+        "severity": "info",
+        "message": "Contracts cannot receive classic payment operations. Send through the asset's contract (SAC) with transfer()."
+      },
+      {
+        "code": "CONTRACT_BALANCE_NEEDS_AUTH",
+        "severity": "blocking",
+        "message": "Issuer requires authorization, and this contract has no authorized GATED balance yet.",
+        "action": "The issuer must authorize the contract (set_authorized) before it can receive."
+      }
+    ]
+  }
+}

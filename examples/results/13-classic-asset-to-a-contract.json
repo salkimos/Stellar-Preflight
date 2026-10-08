@@ -1,0 +1,31 @@
+{
+  "name": "Classic asset to a contract",
+  "input": {
+    "network": "testnet",
+    "recipient": "CDWUSQDVI6T2OB5KFNZESOGVHE5VYAL37OIZ6F6Z73TLM54RW5MAA3F3",
+    "asset": "OPEN:GDS5ZLB5MLZMNS5KMCT767AO4QROXCCWUPPQWM3LGFFFU7U42H23OM2N",
+    "amount": "10",
+    "from": "GBUFXLN5FU4URQ5KXVKZNBJLEXYLAJFBKUOLIMT4OZIEX7SDW2FES3MJ"
+  },
+  "result": {
+    "status": "READY",
+    "route": "contract_transfer",
+    "recipient": {
+      "kind": "contract",
+      "address": "CDWUSQDVI6T2OB5KFNZESOGVHE5VYAL37OIZ6F6Z73TLM54RW5MAA3F3"
+    },
+    "asset": {
+      "kind": "classic",
+      "label": "OPEN:GDS5ZLB5MLZMNS5KMCT767AO4QROXCCWUPPQWM3LGFFFU7U42H23OM2N",
+      "decimals": 7,
+      "contractId": "CCWAW4IDA6RWSHN2H5DROSZAPEZZR5HXRY5FWIJRVTOWL3AJZZR4RE4V"
+    },
+    "issues": [
+      {
+        "code": "CONTRACT_NEEDS_SAC_TRANSFER",
+        "severity": "info",
+        "message": "Contracts cannot receive classic payment operations. Send through the asset's contract (SAC) with transfer()."
+      }
+    ]
+  }
+}

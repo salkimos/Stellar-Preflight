@@ -1,0 +1,29 @@
+{
+  "name": "Classic asset, trustline limit too low",
+  "input": {
+    "network": "testnet",
+    "recipient": "GCYVLPWMAAKPPR3MLL3ZLA3PKJXZSGAGEHSIBDJNQIZ3ANTNYBLHGHSP",
+    "asset": "OPEN:GDS5ZLB5MLZMNS5KMCT767AO4QROXCCWUPPQWM3LGFFFU7U42H23OM2N",
+    "amount": "10"
+  },
+  "result": {
+    "status": "BLOCKED",
+    "recipient": {
+      "kind": "account",
+      "address": "GCYVLPWMAAKPPR3MLL3ZLA3PKJXZSGAGEHSIBDJNQIZ3ANTNYBLHGHSP"
+    },
+    "asset": {
+      "kind": "classic",
+      "label": "OPEN:GDS5ZLB5MLZMNS5KMCT767AO4QROXCCWUPPQWM3LGFFFU7U42H23OM2N",
+      "decimals": 7
+    },
+    "issues": [
+      {
+        "code": "TRUSTLINE_LIMIT_EXCEEDED",
+        "severity": "blocking",
+        "message": "Recipient can receive at most 5 OPEN, less than 10.",
+        "action": "Send a smaller amount, or ask the recipient to raise their trustline limit."
+      }
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "SEP-41 token, recipient frozen by the token",
+  "input": {
+    "network": "testnet",
+    "recipient": "GDPRRVAVPWPF4ZTQW6FLSZYJX5YVTXBKRYYI25MDXZKNEBQF3MPOXYAC",
+    "asset": "CBDH3PLU662ZQZJA3QDHYZFL2OBGBXUFPW4NFMQP23Y263HY6L4UI2T3",
+    "amount": "25",
+    "from": "GBUFXLN5FU4URQ5KXVKZNBJLEXYLAJFBKUOLIMT4OZIEX7SDW2FES3MJ"
+  },
+  "result": {
+    "status": "BLOCKED",
+    "recipient": {
+      "kind": "account",
+      "address": "GDPRRVAVPWPF4ZTQW6FLSZYJX5YVTXBKRYYI25MDXZKNEBQF3MPOXYAC"
+    },
+    "asset": {
+      "kind": "sep41",
+      "label": "PFD",
+      "contractId": "CBDH3PLU662ZQZJA3QDHYZFL2OBGBXUFPW4NFMQP23Y263HY6L4UI2T3",
+      "decimals": 6
+    },
+    "issues": [
+      {
+        "code": "TRANSFER_SIMULATION_FAILED",
+        "severity": "blocking",
+        "message": "Transfer simulation failed: token returned Frozen (error #3)",
+        "action": "Fix the cause above. Sender-side problems (balance, auth) also show up here."
+      }
+    ]
+  }
+}

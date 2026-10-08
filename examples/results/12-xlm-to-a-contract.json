@@ -1,0 +1,36 @@
+{
+  "name": "XLM to a contract",
+  "input": {
+    "network": "testnet",
+    "recipient": "CDWUSQDVI6T2OB5KFNZESOGVHE5VYAL37OIZ6F6Z73TLM54RW5MAA3F3",
+    "asset": "XLM",
+    "amount": "10"
+  },
+  "result": {
+    "status": "READY",
+    "route": "contract_transfer",
+    "recipient": {
+      "kind": "contract",
+      "address": "CDWUSQDVI6T2OB5KFNZESOGVHE5VYAL37OIZ6F6Z73TLM54RW5MAA3F3"
+    },
+    "asset": {
+      "kind": "native",
+      "label": "XLM",
+      "decimals": 7,
+      "contractId": "CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQVU2HHGCYSC"
+    },
+    "issues": [
+      {
+        "code": "CONTRACT_NEEDS_SAC_TRANSFER",
+        "severity": "info",
+        "message": "Contracts cannot receive classic payment operations. Send through the asset's contract (SAC) with transfer()."
+      },
+      {
+        "code": "TRANSFER_NOT_SIMULATED",
+        "severity": "info",
+        "message": "Transfer was not simulated because no sender was given.",
+        "action": "Pass a sender to also check balance and authorization on the sending side."
+      }
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "SEP-41 token to a contract",
+  "input": {
+    "network": "testnet",
+    "recipient": "CDWUSQDVI6T2OB5KFNZESOGVHE5VYAL37OIZ6F6Z73TLM54RW5MAA3F3",
+    "asset": "CBDH3PLU662ZQZJA3QDHYZFL2OBGBXUFPW4NFMQP23Y263HY6L4UI2T3",
+    "amount": "25",
+    "from": "GBUFXLN5FU4URQ5KXVKZNBJLEXYLAJFBKUOLIMT4OZIEX7SDW2FES3MJ"
+  },
+  "result": {
+    "status": "READY",
+    "route": "contract_transfer",
+    "recipient": {
+      "kind": "contract",
+      "address": "CDWUSQDVI6T2OB5KFNZESOGVHE5VYAL37OIZ6F6Z73TLM54RW5MAA3F3"
+    },
+    "asset": {
+      "kind": "sep41",
+      "label": "PFD",
+      "contractId": "CBDH3PLU662ZQZJA3QDHYZFL2OBGBXUFPW4NFMQP23Y263HY6L4UI2T3",
+      "decimals": 6
+    },
+    "issues": [
+      {
+        "code": "CUSTOM_TOKEN_LOGIC",
+        "severity": "info",
+        "message": "Custom token: the transfer simulated cleanly, but the contract can run its own rules at submit time."
+      }
+    ]
+  }
+}

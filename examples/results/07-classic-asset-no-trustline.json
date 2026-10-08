@@ -1,0 +1,29 @@
+{
+  "name": "Classic asset, no trustline",
+  "input": {
+    "network": "testnet",
+    "recipient": "GCQDN4BZ7ZNAVOILDP4STU6RD6OUUV6CT3IKCW7VT42363XOMLJ5EC34",
+    "asset": "OPEN:GDS5ZLB5MLZMNS5KMCT767AO4QROXCCWUPPQWM3LGFFFU7U42H23OM2N",
+    "amount": "10"
+  },
+  "result": {
+    "status": "BLOCKED",
+    "recipient": {
+      "kind": "account",
+      "address": "GCQDN4BZ7ZNAVOILDP4STU6RD6OUUV6CT3IKCW7VT42363XOMLJ5EC34"
+    },
+    "asset": {
+      "kind": "classic",
+      "label": "OPEN:GDS5ZLB5MLZMNS5KMCT767AO4QROXCCWUPPQWM3LGFFFU7U42H23OM2N",
+      "decimals": 7
+    },
+    "issues": [
+      {
+        "code": "TRUSTLINE_MISSING",
+        "severity": "blocking",
+        "message": "Recipient has no trustline for OPEN.",
+        "action": "The recipient must add a trustline for OPEN (changeTrust) before they can receive it."
+      }
+    ]
+  }
+}

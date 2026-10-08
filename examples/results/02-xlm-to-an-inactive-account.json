@@ -1,0 +1,30 @@
+{
+  "name": "XLM to an inactive account",
+  "input": {
+    "network": "testnet",
+    "recipient": "GDFVOS42AKCTV6KRPQYRMFJVH6OMAFNHOXWLYJYILQ4E6FV2HUCNID4X",
+    "asset": "XLM",
+    "amount": "5"
+  },
+  "result": {
+    "status": "WARNING",
+    "route": "create_account",
+    "recipient": {
+      "kind": "account",
+      "address": "GDFVOS42AKCTV6KRPQYRMFJVH6OMAFNHOXWLYJYILQ4E6FV2HUCNID4X"
+    },
+    "asset": {
+      "kind": "native",
+      "label": "XLM",
+      "decimals": 7
+    },
+    "issues": [
+      {
+        "code": "ACCOUNT_NOT_FOUND_CREATE",
+        "severity": "warning",
+        "message": "Recipient account GDFVOS42AKCTV6KRPQYRMFJVH6OMAFNHOXWLYJYILQ4E6FV2HUCNID4X does not exist yet.",
+        "action": "A plain payment will fail. Use createAccount, which sends the XLM and creates the account."
+      }
+    ]
+  }
+}

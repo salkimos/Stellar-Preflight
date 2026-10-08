@@ -1,0 +1,199 @@
+{
+  "createdAt": "2026-10-08",
+  "note": "Testnet resets periodically. Re-run scripts/seed-testnet.ts if these addresses stop resolving.",
+  "accounts": {
+    "sender": "GBUFXLN5FU4URQ5KXVKZNBJLEXYLAJFBKUOLIMT4OZIEX7SDW2FES3MJ",
+    "ready": "GA75IHPENTDYOKFBGDCAR5OYQZVZ24XSOU57R3LI45PRMKN2YU7ASXEC",
+    "inactive": "GDFVOS42AKCTV6KRPQYRMFJVH6OMAFNHOXWLYJYILQ4E6FV2HUCNID4X",
+    "noTrustline": "GCQDN4BZ7ZNAVOILDP4STU6RD6OUUV6CT3IKCW7VT42363XOMLJ5EC34",
+    "unauthorized": "GD3SXMOZYGGBICHVMYXEN55BZEFO3WAYET7EDCGIKEVHEN4G436UKGYW",
+    "lowLimit": "GCYVLPWMAAKPPR3MLL3ZLA3PKJXZSGAGEHSIBDJNQIZ3ANTNYBLHGHSP",
+    "memoRequired": "GDOGVVE6RZZP3Z3PB7PHIK52MVYRU3NFRNCSYKCNRJQGH6K2D5ATQQQL",
+    "frozen": "GDPRRVAVPWPF4ZTQW6FLSZYJX5YVTXBKRYYI25MDXZKNEBQF3MPOXYAC",
+    "openIssuer": "GDS5ZLB5MLZMNS5KMCT767AO4QROXCCWUPPQWM3LGFFFU7U42H23OM2N",
+    "gatedIssuer": "GB3UAROVKOFNCXBYH4LN3DBA7C2J7A3YRK2GAGLREH37L7X5MA7LINAO"
+  },
+  "contracts": {
+    "demoToken": "CBDH3PLU662ZQZJA3QDHYZFL2OBGBXUFPW4NFMQP23Y263HY6L4UI2T3",
+    "vault": "CDWUSQDVI6T2OB5KFNZESOGVHE5VYAL37OIZ6F6Z73TLM54RW5MAA3F3",
+    "openSac": "CCWAW4IDA6RWSHN2H5DROSZAPEZZR5HXRY5FWIJRVTOWL3AJZZR4RE4V",
+    "gatedSac": "CCXLHCYTH2MMJD6TUZV4VWPIMW5GURSGWNEVOCCWFGTSHFFNGNQICZ44"
+  },
+  "scenarios": [
+    {
+      "network": "testnet",
+      "name": "XLM to an active account",
+      "recipient": "GA75IHPENTDYOKFBGDCAR5OYQZVZ24XSOU57R3LI45PRMKN2YU7ASXEC",
+      "asset": "XLM",
+      "amount": "10",
+      "expect": "READY"
+    },
+    {
+      "network": "testnet",
+      "name": "XLM to an inactive account",
+      "recipient": "GDFVOS42AKCTV6KRPQYRMFJVH6OMAFNHOXWLYJYILQ4E6FV2HUCNID4X",
+      "asset": "XLM",
+      "amount": "5",
+      "expect": "WARNING"
+    },
+    {
+      "network": "testnet",
+      "name": "XLM below the account-creation minimum",
+      "recipient": "GDFVOS42AKCTV6KRPQYRMFJVH6OMAFNHOXWLYJYILQ4E6FV2HUCNID4X",
+      "asset": "XLM",
+      "amount": "0.5",
+      "expect": "BLOCKED"
+    },
+    {
+      "network": "testnet",
+      "name": "Muxed address",
+      "recipient": "MA75IHPENTDYOKFBGDCAR5OYQZVZ24XSOU57R3LI45PRMKN2YU7ASAAAAAAAAAAD5FEDC",
+      "asset": "XLM",
+      "amount": "10",
+      "expect": "READY"
+    },
+    {
+      "network": "testnet",
+      "name": "Memo required (SEP-29)",
+      "recipient": "GDOGVVE6RZZP3Z3PB7PHIK52MVYRU3NFRNCSYKCNRJQGH6K2D5ATQQQL",
+      "asset": "XLM",
+      "amount": "10",
+      "expect": "WARNING"
+    },
+    {
+      "network": "testnet",
+      "name": "Classic asset with a trustline",
+      "recipient": "GA75IHPENTDYOKFBGDCAR5OYQZVZ24XSOU57R3LI45PRMKN2YU7ASXEC",
+      "asset": "OPEN:GDS5ZLB5MLZMNS5KMCT767AO4QROXCCWUPPQWM3LGFFFU7U42H23OM2N",
+      "amount": "10",
+      "expect": "READY"
+    },
+    {
+      "network": "testnet",
+      "name": "Classic asset, no trustline",
+      "recipient": "GCQDN4BZ7ZNAVOILDP4STU6RD6OUUV6CT3IKCW7VT42363XOMLJ5EC34",
+      "asset": "OPEN:GDS5ZLB5MLZMNS5KMCT767AO4QROXCCWUPPQWM3LGFFFU7U42H23OM2N",
+      "amount": "10",
+      "expect": "BLOCKED"
+    },
+    {
+      "network": "testnet",
+      "name": "Classic asset, unauthorized trustline",
+      "recipient": "GD3SXMOZYGGBICHVMYXEN55BZEFO3WAYET7EDCGIKEVHEN4G436UKGYW",
+      "asset": "GATED:GB3UAROVKOFNCXBYH4LN3DBA7C2J7A3YRK2GAGLREH37L7X5MA7LINAO",
+      "amount": "10",
+      "expect": "BLOCKED"
+    },
+    {
+      "network": "testnet",
+      "name": "Classic asset, authorized trustline",
+      "recipient": "GA75IHPENTDYOKFBGDCAR5OYQZVZ24XSOU57R3LI45PRMKN2YU7ASXEC",
+      "asset": "GATED:GB3UAROVKOFNCXBYH4LN3DBA7C2J7A3YRK2GAGLREH37L7X5MA7LINAO",
+      "amount": "10",
+      "expect": "READY"
+    },
+    {
+      "network": "testnet",
+      "name": "Classic asset, trustline limit too low",
+      "recipient": "GCYVLPWMAAKPPR3MLL3ZLA3PKJXZSGAGEHSIBDJNQIZ3ANTNYBLHGHSP",
+      "asset": "OPEN:GDS5ZLB5MLZMNS5KMCT767AO4QROXCCWUPPQWM3LGFFFU7U42H23OM2N",
+      "amount": "10",
+      "expect": "BLOCKED"
+    },
+    {
+      "network": "testnet",
+      "name": "Classic asset to an inactive account",
+      "recipient": "GDFVOS42AKCTV6KRPQYRMFJVH6OMAFNHOXWLYJYILQ4E6FV2HUCNID4X",
+      "asset": "OPEN:GDS5ZLB5MLZMNS5KMCT767AO4QROXCCWUPPQWM3LGFFFU7U42H23OM2N",
+      "amount": "10",
+      "expect": "BLOCKED"
+    },
+    {
+      "network": "testnet",
+      "name": "XLM to a contract",
+      "recipient": "CDWUSQDVI6T2OB5KFNZESOGVHE5VYAL37OIZ6F6Z73TLM54RW5MAA3F3",
+      "asset": "XLM",
+      "amount": "10",
+      "expect": "READY"
+    },
+    {
+      "network": "testnet",
+      "name": "Classic asset to a contract",
+      "recipient": "CDWUSQDVI6T2OB5KFNZESOGVHE5VYAL37OIZ6F6Z73TLM54RW5MAA3F3",
+      "asset": "OPEN:GDS5ZLB5MLZMNS5KMCT767AO4QROXCCWUPPQWM3LGFFFU7U42H23OM2N",
+      "amount": "10",
+      "from": "GBUFXLN5FU4URQ5KXVKZNBJLEXYLAJFBKUOLIMT4OZIEX7SDW2FES3MJ",
+      "expect": "READY"
+    },
+    {
+      "network": "testnet",
+      "name": "Auth-required asset to a contract",
+      "recipient": "CDWUSQDVI6T2OB5KFNZESOGVHE5VYAL37OIZ6F6Z73TLM54RW5MAA3F3",
+      "asset": "GATED:GB3UAROVKOFNCXBYH4LN3DBA7C2J7A3YRK2GAGLREH37L7X5MA7LINAO",
+      "amount": "10",
+      "expect": "BLOCKED"
+    },
+    {
+      "network": "testnet",
+      "name": "SAC transfer to an account",
+      "recipient": "GA75IHPENTDYOKFBGDCAR5OYQZVZ24XSOU57R3LI45PRMKN2YU7ASXEC",
+      "asset": "CCWAW4IDA6RWSHN2H5DROSZAPEZZR5HXRY5FWIJRVTOWL3AJZZR4RE4V",
+      "amount": "10",
+      "from": "GBUFXLN5FU4URQ5KXVKZNBJLEXYLAJFBKUOLIMT4OZIEX7SDW2FES3MJ",
+      "expect": "READY"
+    },
+    {
+      "network": "testnet",
+      "name": "SAC transfer, no trustline",
+      "recipient": "GCQDN4BZ7ZNAVOILDP4STU6RD6OUUV6CT3IKCW7VT42363XOMLJ5EC34",
+      "asset": "CCWAW4IDA6RWSHN2H5DROSZAPEZZR5HXRY5FWIJRVTOWL3AJZZR4RE4V",
+      "amount": "10",
+      "from": "GBUFXLN5FU4URQ5KXVKZNBJLEXYLAJFBKUOLIMT4OZIEX7SDW2FES3MJ",
+      "expect": "BLOCKED"
+    },
+    {
+      "network": "testnet",
+      "name": "SAC transfer, sender short of funds",
+      "recipient": "GA75IHPENTDYOKFBGDCAR5OYQZVZ24XSOU57R3LI45PRMKN2YU7ASXEC",
+      "asset": "CCWAW4IDA6RWSHN2H5DROSZAPEZZR5HXRY5FWIJRVTOWL3AJZZR4RE4V",
+      "amount": "5000",
+      "from": "GBUFXLN5FU4URQ5KXVKZNBJLEXYLAJFBKUOLIMT4OZIEX7SDW2FES3MJ",
+      "expect": "BLOCKED"
+    },
+    {
+      "network": "testnet",
+      "name": "SEP-41 token, simulated",
+      "recipient": "GA75IHPENTDYOKFBGDCAR5OYQZVZ24XSOU57R3LI45PRMKN2YU7ASXEC",
+      "asset": "CBDH3PLU662ZQZJA3QDHYZFL2OBGBXUFPW4NFMQP23Y263HY6L4UI2T3",
+      "amount": "25",
+      "from": "GBUFXLN5FU4URQ5KXVKZNBJLEXYLAJFBKUOLIMT4OZIEX7SDW2FES3MJ",
+      "expect": "READY"
+    },
+    {
+      "network": "testnet",
+      "name": "SEP-41 token, not simulated",
+      "recipient": "GA75IHPENTDYOKFBGDCAR5OYQZVZ24XSOU57R3LI45PRMKN2YU7ASXEC",
+      "asset": "CBDH3PLU662ZQZJA3QDHYZFL2OBGBXUFPW4NFMQP23Y263HY6L4UI2T3",
+      "amount": "25",
+      "expect": "WARNING"
+    },
+    {
+      "network": "testnet",
+      "name": "SEP-41 token, recipient frozen by the token",
+      "recipient": "GDPRRVAVPWPF4ZTQW6FLSZYJX5YVTXBKRYYI25MDXZKNEBQF3MPOXYAC",
+      "asset": "CBDH3PLU662ZQZJA3QDHYZFL2OBGBXUFPW4NFMQP23Y263HY6L4UI2T3",
+      "amount": "25",
+      "from": "GBUFXLN5FU4URQ5KXVKZNBJLEXYLAJFBKUOLIMT4OZIEX7SDW2FES3MJ",
+      "expect": "BLOCKED"
+    },
+    {
+      "network": "testnet",
+      "name": "SEP-41 token to a contract",
+      "recipient": "CDWUSQDVI6T2OB5KFNZESOGVHE5VYAL37OIZ6F6Z73TLM54RW5MAA3F3",
+      "asset": "CBDH3PLU662ZQZJA3QDHYZFL2OBGBXUFPW4NFMQP23Y263HY6L4UI2T3",
+      "amount": "25",
+      "from": "GBUFXLN5FU4URQ5KXVKZNBJLEXYLAJFBKUOLIMT4OZIEX7SDW2FES3MJ",
+      "expect": "READY"
+    }
+  ]
+}
