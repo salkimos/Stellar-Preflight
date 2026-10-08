@@ -1,0 +1,23 @@
+{
+  "name": "stellar-preflight",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "test": "pnpm -r test",
+    "test:live": "pnpm --dir packages/sdk test:live",
+    "typecheck": "tsc -p .",
+    "seed": "node scripts/seed-testnet.ts",
+    "examples": "node scripts/write-examples.ts",
+    "docs:codes": "node scripts/gen-codes-doc.ts",
+    "api": "pnpm --dir apps/api start",
+    "web": "pnpm --dir apps/web dev",
+    "preflight": "node apps/cli/src/cli.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "typescript": "^7.0.2"
+  }
+}

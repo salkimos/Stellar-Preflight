@@ -1,0 +1,16 @@
+{
+  "name": "@stellar-preflight/sdk",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "test:live": "PREFLIGHT_LIVE=1 node --test --test-concurrency=4 test/testnet.test.ts"
+  },
+  "dependencies": {
+    "@stellar/stellar-sdk": "^17.2.1"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "@stellar-preflight/scripts",
+  "private": true,
+  "type": "module",
+  "dependencies": { "@stellar/stellar-sdk": "^17.2.1" }
+}
