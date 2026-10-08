@@ -97,6 +97,26 @@ Mainnet works with any Stellar RPC: pass `--rpc`, `rpcUrl`, or set
 `MAINNET_RPC_URL` for the API. Testnet uses `https://soroban-testnet.stellar.org`
 by default.
 
+## Screenshots
+
+All taken against testnet with the scenarios below.
+
+| | |
+|---|---|
+| Web, ready | [web-ready-xlm.png](docs/screenshots/web-ready-xlm.png) |
+| Web, warning: inactive account | [web-warning-inactive-account.png](docs/screenshots/web-warning-inactive-account.png) |
+| Web, blocked: no trustline | [web-blocked-no-trustline.png](docs/screenshots/web-blocked-no-trustline.png) |
+| Web, blocked: trustline limit | [web-blocked-trustline-limit.png](docs/screenshots/web-blocked-trustline-limit.png) |
+| Web, muxed address | [web-ready-muxed.png](docs/screenshots/web-ready-muxed.png) |
+| Web, SAC transfer | [web-ready-sac-transfer.png](docs/screenshots/web-ready-sac-transfer.png) |
+| Web, SEP-41 token rule caught by simulation | [web-blocked-sep41-frozen.png](docs/screenshots/web-blocked-sep41-frozen.png) |
+| CLI, accounts and classic assets | [cli-accounts.png](docs/screenshots/cli-accounts.png) |
+| CLI, contracts and SAC | [cli-contracts.png](docs/screenshots/cli-contracts.png) |
+| CLI, SEP-41 token | [cli-sep41.png](docs/screenshots/cli-sep41.png) |
+| REST API response | [api-response.png](docs/screenshots/api-response.png) |
+
+![web demo](docs/screenshots/web-blocked-sep41-frozen.png)
+
 ## Testnet examples
 
 `scripts/seed-testnet.ts` builds one real account or contract per scenario on
