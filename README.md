@@ -16,6 +16,8 @@ x TRUSTLINE_LIMIT_EXCEEDED  Recipient can receive at most 5 OPEN, less than 10.
   -> Send a smaller amount, or ask the recipient to raise their trustline limit.
 ```
 
+Live demo: https://salkimos.github.io/Stellar-Preflight/
+
 Preflight is read-only. It never signs, submits, or creates anything.
 
 ## What it checks
